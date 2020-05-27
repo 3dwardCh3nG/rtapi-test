@@ -2,7 +2,7 @@
 version: 2.1
 # Use a package of configuration called an orb.
 jobs:
-  HOAStageVersionV1Versions:
+  HOA_Stage_Version_V1_Versions:
     docker:
       - image: circleci/go
     working_directory: ~/repo
