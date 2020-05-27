@@ -30,14 +30,14 @@ workflows:
   version: 2
   hoa-stage:
     jobs:
-      - ApproveHOAStageVersionV1Versions:
+      - Approve_HOA_Stage_Version_V1_Versions:
           type: approval
           filters:
             branches:
               only: hoa_stage
-      - HOAStageVersionV1Versions:
+      - HOA_Stage_Version_V1_Versions:
           requires:
-            - ApproveHOAStageVersionV1Versions
+            - Approve_HOA_Stage_Version_V1_Versions
           filters:
             branches:
               only: hoa_stage
