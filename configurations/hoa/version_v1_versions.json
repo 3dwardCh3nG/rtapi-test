@@ -1,7 +1,7 @@
 [
   {
     "target": {
-      "url": "https://epch-stage-us-west-2.epcprod.com/epc-html/v1/version/?market=au",
+      "url": "https://epch-###env###-us-west-2.epcprod.com/epc-html/v1/version/?market=au",
       "method": "GET",
       "header": {
         "Content-Type": [
