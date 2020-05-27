@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Executing rtapi
           command: |
-            rtapi --file ./configurations/hoa/version_v1_versions.json --output hoa_version_v1_versions_report.pdf
+            rtapi --file ./configurations/hoa/version_v1_versions.yml --output hoa_version_v1_versions_report.pdf
       - store_artifacts:
           path: ~/repo/hoa_version_v1_versions_report.pdf
 
