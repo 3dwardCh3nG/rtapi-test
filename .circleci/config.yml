@@ -16,7 +16,6 @@ jobs:
           name: Update configuration
           command: |
             pwd
-#            sed -i s/###BACKEND_DOMAIN###/${US_BFF_DOMAIN_STAGE}/g ./configurations/hoa/version_v1_versions.json
             sed -i s/###JWT_TOKEN###/${JWT_TOKEN}/g ./configurations/hoa/version_v1_versions.json
             sed -i s/###IFM_SID###/${SID_HOA}/g ./configurations/hoa/version_v1_versions.json
             cat ./configurations/hoa/version_v1_versions.json
