@@ -11,10 +11,10 @@
           "application/json;charset=UTF-8"
         ],
         "Authorization": [
-          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJFNFI3NWp0N1ZGbzUzZ3pzdTF3a1M3aUxqYngzSTJZTiIsInZmX2lmbSI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9hcGkuc3VwZXJzZXJ2aWNlLmNvbSIsIlgtSUZNLVVJRCI6ImVjaGVuZ0BpbmZvbWVkaWEuY29tLmF1IiwiWC1JRk0tQ09VTlRSWSI6IlVTIiwiZXhwIjoxNTkwNjU3MzQ2LCJpYXQiOjE1OTA1ODUzNDZ9.2gkYZ9BCjko-bX-tugxHx1YYIFKrNxku2hFyAXsJI9A"
+          "###JWT_TOKEN###"
         ],
         "X-IFM-UID": [
-          "echeng@infomedia.com.au"
+          "###IFM_UID###"
         ],
         "X-IFM-SID": [
           "###IFM_SID###"

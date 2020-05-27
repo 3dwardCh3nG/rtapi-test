@@ -17,7 +17,9 @@ jobs:
           command: |
             pwd
             sed -i s/###env###/${STAGE_DOMAIN_ENV}/g ./configurations/hoa/version_v1_versions.json
+            sed -i s/###JWT_TOKEN###/${JWT_TOKEN}/g ./configurations/hoa/version_v1_versions.json
             sed -i s/###IFM_SID###/${SID_HOA}/g ./configurations/hoa/version_v1_versions.json
+            sed -i s/###IFM_UID###/${IFM_UID}/g ./configurations/hoa/version_v1_versions.json
             cat ./configurations/hoa/version_v1_versions.json
       - run:
           name: Executing rtapi
