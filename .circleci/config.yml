@@ -2,7 +2,7 @@
 version: 2.1
 # Use a package of configuration called an orb.
 jobs:
-  HOA_VERSION_V1_VERSIONS_STAGE:
+  HOAStageVersionV1Versions:
     docker: circleci/go
     working_directory: ~/repo
     steps:
@@ -29,14 +29,14 @@ workflows:
   version: 2
   hoa-stage:
     jobs:
-      - Approve_HOA_VERSION_V1_VERSIONS_STAGE:
+      - ApproveHOAStageVersionV1Versions:
           type: approval
           filters:
             branches:
               only: hoa_stage
-      - HOA_VERSION_V1_VERSIONS_STAGE:
+      - HOAStageVersionV1Versions:
           requires:
-            - Approve_HOA_VERSION_V1_VERSIONS_STAGE
+            - ApproveHOAStageVersionV1Versions
           filters:
             branches:
               only: hoa_stage
