@@ -11,7 +11,7 @@
           "application/json;charset=UTF-8"
         ],
         "Authorization": [
-          "###JWT_TOKEN###"
+          "Bearer ###JWT_TOKEN###"
         ],
         "X-IFM-UID": [
           "###IFM_UID###"
