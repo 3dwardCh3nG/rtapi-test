@@ -27,7 +27,31 @@ jobs:
             rtapi --file ./configurations/hoa/version_v1_versions.json --output hoa_version_v1_versions_report.pdf
       - store_artifacts:
           path: ~/repo/hoa_version_v1_versions_report.pdf
-
+  HOA_Prod_US_Version_V1_Versions:
+    docker:
+      - image: circleci/golang
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Install rtapi
+          command: |
+            go get github.com/nginxinc/rtapi
+      - run:
+          name: Update configuration
+          command: |
+            pwd
+            sed -i s/###env###/${PROD_DOMAIN_ENV_US}/g ./configurations/hoa/version_v1_versions.json
+            sed -i s/###JWT_TOKEN###/${JWT}/g ./configurations/hoa/version_v1_versions.json
+            sed -i s/###IFM_SID###/${SID_HOA}/g ./configurations/hoa/version_v1_versions.json
+            sed -i s/###IFM_UID###/${IFM_UID}/g ./configurations/hoa/version_v1_versions.json
+            cat ./configurations/hoa/version_v1_versions.json
+      - run:
+          name: Executing rtapi
+          command: |
+            rtapi --file ./configurations/hoa/version_v1_versions.json --output hoa_version_v1_versions_report.pdf
+      - store_artifacts:
+          path: ~/repo/hoa_version_v1_versions_report.pdf
 workflows:
   version: 2
   hoa-stage:
@@ -43,3 +67,14 @@ workflows:
           filters:
             branches:
               only: hoa_stage
+      - Approve_HOA_Prod_US_Version_V1_Versions:
+          type: approval
+          filters:
+            branches:
+              only: hoa_prod
+      - HOA_Prod_US_Version_V1_Versions:
+          requires:
+            - Approve_HOA_Prod_US_Version_V1_Versions
+          filters:
+            branches:
+              only: hoa_prod
