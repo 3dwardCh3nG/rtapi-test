@@ -15,6 +15,8 @@ jobs:
       - run:
           name: Update configuration
           command: |
+            pwd
+            sed -i s/###env###/${STAGE_DOMAIN_ENV}/g ./configurations/hoa/version_v1_versions.json
             cat ./configurations/hoa/version_v1_versions.json
       - run:
           name: Executing rtapi
